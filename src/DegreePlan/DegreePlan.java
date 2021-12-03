@@ -10,7 +10,7 @@ public class DegreePlan
     {
         Computer_Science(1),
         Nursing(2),
-        Mechanical_Engineering(1),
+        Mechanical(1),
         Accounting(3),
         Chemistry(4);
         private int students;
