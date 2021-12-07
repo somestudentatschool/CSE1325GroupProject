@@ -1,32 +1,31 @@
 package Grades;
 import java.util.Scanner;
+import java.awt.*;
+import javax.swing.*;
+import java.text.*;
 
 public class GPA
 {
     String grade = "";
-    String grades = "";
-    double credit,gpa,gradeValues,points;
-    double totalPoints = 0;
+    double credits,hours,gradeValues,gpa;
+    double totalHours = 0;
+    double totalHoursEarned = 0;
     double totalCredits = 0;
 
-    public String enterCreditsGrades()
+    public String calculateGPACredits()
     {
         for(int i = 0; i < 3; i++)
         {
-            Scanner keyboard = new Scanner(System.in);
-            System.out.println("Please enter the amount of credits for class " + i + ": ");
-            credit = keyboard.nextDouble();
-            System.out.println("Please enter your grade for class "+ i + ": (In letter form) ");
-            grade = keyboard.nextLine();
-            grades += grade;
+            Scanner hourCheck = new Scanner(System.in);
+            System.out.println("Please enter the number of hours this course was: ");
+            hours = hourCheck.nextDouble();
+            Scanner gradeCheck = new Scanner(System.in);
+            System.out.println("Please enter your letter grade for this class: ");
+            grade = gradeCheck.next();
+            totalHours += hours;
+            totalHoursEarned += (hours*gradeValues);
         }
-        return grades;
-    }
 
-    //Changed how it should check for what letter grade someone has and the points attributed to it, might be buggy
-    //just doing some rough proto-coding - Efaz
-    public double calculateGPA()
-    {
         switch(grade)
         {
             case "A": case "a" : gradeValues = 4.0;
@@ -42,13 +41,21 @@ public class GPA
 
             default: gradeValues = 0;
         }
-        return totalPoints += totalCredits*gradeValues;
+        gpa = totalCredits*gradeValues;
+        return calculateGPACredits();
     }
 
-    //will work on this later, planning to arrange the GUI page for the GPA calculator, should discuss this
+    /*
+    public GPA()
+    {
+        createGUI();
+    }
+
+    will work on this later, planning to arrange the GUI page for the GPA calculator, should discuss this
     // on  Tuesday 12/7- Efaz
-    public void GPA_GUI()
+    public void createGUI()
     {
 
     }
+     */
 }
