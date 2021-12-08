@@ -130,9 +130,6 @@ public class GPA implements ActionListener
         {
             System.exit(0);
         }
-            //Scanner hourCheck = new Scanner(System.in);
-            System.out.println("Please enter the number of hours this course was: ");
-            //hours = hourCheck.nextInt();
             if(e.getSource()==_4hour)
             {
                 hours=4;
@@ -149,10 +146,6 @@ public class GPA implements ActionListener
             {
                 hours=1;
             }
-
-            //Scanner gradeCheck = new Scanner(System.in);
-            System.out.println("Please enter your letter grade for this class: ");
-            //grades = gradeCheck.next().charAt(0);
 
 
             if(e.getSource()==Agrade)
