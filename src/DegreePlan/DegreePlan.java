@@ -42,8 +42,8 @@ public class DegreePlan
                 String line;
                 while((line = someDegree.readLine()) != null)
                 {
-                    String info = someDegree.readLine();
-                    String[] parsedInfo = info.split("[,]");
+                    line = someDegree.readLine();
+                    String[] parsedInfo = line.split("[,]");
                     classNum[count] = parsedInfo[0];
                     hours[count] = parsedInfo[1];
                     nameOfClass[count] = parsedInfo[2];

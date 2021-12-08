@@ -14,7 +14,8 @@ class classScreen extends JFrame implements ActionListener //going to implement 
     classScreen(DegreePlan degreeplan)
     {
         degreePlan = degreeplan;
-        DegreePlan.readDegreePlans();
+        degreePlan.getDegreePlan();
+        degreePlan.readDegreePlans();
     }
 
     @Override
