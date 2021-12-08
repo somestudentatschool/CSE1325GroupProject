@@ -151,7 +151,7 @@ public class GPA implements ActionListener
                 hours=1;
                // totalHoursEarned+=hours;
             }
-            totalHoursEarned+=hours;
+            //totalHoursEarned+=hours;
 
             if(e.getSource()==Agrade)
             {
