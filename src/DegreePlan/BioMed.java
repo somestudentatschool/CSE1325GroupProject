@@ -7,4 +7,6 @@ public class BioMed extends DegreePlan
         super(degree);
     }
 
+
+
 }
