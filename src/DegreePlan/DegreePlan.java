@@ -28,15 +28,6 @@ public class DegreePlan
             }
         }
 
-        public void StudentMajors(int students)
-        {
-            this.students = students;
-        }
-
-        public int getStudents() {
-            return students;
-        }
-
         //since we are reading in files, I thought that maybe we should use a try-catch method to read in
         //the files, might be a tad bit buggy so let me know if I need to fix anything - Efaz
         public void readDegreePlans()
