@@ -9,18 +9,36 @@ import java.io.*;
 
 class classScreen extends JFrame implements ActionListener //going to implement the class screen at 3
 {
-    JFrame class1 = new JFrame();
+    //JFrame class1 = new JFrame();
     DegreePlan degreePlan;
+    JPanel classpanel;
+    JLabel degree2, message;
+    JLabel degreeLabel = new JLabel("Choose your degree: ");
     classScreen(DegreePlan degreeplan)
     {
         degreePlan = degreeplan;
         degreePlan.getDegreePlan();
         degreePlan.readDegreePlans();
+        degree2 = new JLabel();
+        degree2.setText("Computer Science: ");
+        classpanel = new JPanel(new GridLayout(3, 2));
+        classpanel.add(degree2);
+        classpanel.add(degreeLabel);
+        message = new JLabel();
+        classpanel.add(message);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        //adding listeners
+        add(classpanel,BorderLayout.CENTER);
+        setTitle("Classes Available ");
+        setSize(450,350);
+        setVisible(true);
+
     }
 
     @Override
     public void actionPerformed(ActionEvent e)
     {
+        setVisible(false);
 
     }
 }
@@ -95,6 +113,7 @@ class classScreen extends JFrame implements ActionListener //going to implement 
         {
             if(e.getSource() == classbutton)
             {
+                classScreen classes = new classScreen(degreeplan);
 
             }
         }
