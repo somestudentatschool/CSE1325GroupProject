@@ -26,12 +26,34 @@ class classScreen extends JFrame implements ActionListener //going to implement 
 //OMAIR'S Additon GUI
     class menuinterface extends JFrame implements ActionListener
     {
+        DegreePlan degreeplan;
+        Degree degree1;
+        String degree;
         JFrame cool = new JFrame("Welcome");
         JButton homebutton = new JButton("HOME");
         JButton classbutton = new JButton("Classes");
         JButton gpacalbutton = new JButton("MY GPA");
         menuinterface(String userName, String degree)
         {
+            this.degree = degree;
+            if(degree.equals("Computer Science"))
+            {
+                System.out.println("Degree is comp Sci");
+                Degree degree1 = Degree.CSE;
+                degreeplan = new DegreePlan(degree1);
+            }
+            else if(degree.equals("Biomedical"))
+            {
+                System.out.println("Degree is bio");
+                Degree degree1 = Degree.BIOMED;
+                degreeplan = new DegreePlan(degree1);
+            }
+            else
+            {
+                System.out.println("Degree is mechanical");
+                Degree degree1 = Degree.MECHANICAL;
+                degreeplan = new DegreePlan(degree1);
+            }
             cool.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             cool.setSize(1270,720);
             cool.setVisible(true);
@@ -64,13 +86,13 @@ class classScreen extends JFrame implements ActionListener //going to implement 
             homebutton.addActionListener(this);
         }
 
+
         @Override
         public void actionPerformed(ActionEvent e)
         {
             if(e.getSource() == classbutton)
             {
-                cool.setVisible(false);
-                classScreen class1 = new classScreen();
+
             }
         }
     }

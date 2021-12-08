@@ -118,6 +118,11 @@ public class GPA implements ActionListener
 
     }
 
+    public void changeVisible()
+    {
+
+    }
+
     @Override
     public void actionPerformed(ActionEvent e)
     {
