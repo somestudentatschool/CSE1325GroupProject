@@ -125,8 +125,6 @@ public class GPA implements ActionListener
         {
             System.exit(0);
         }
-        for(int i=0; i<10; i++)
-        {
             //Scanner hourCheck = new Scanner(System.in);
             System.out.println("Please enter the number of hours this course was: ");
             //hours = hourCheck.nextInt();
@@ -150,33 +148,35 @@ public class GPA implements ActionListener
             //Scanner gradeCheck = new Scanner(System.in);
             System.out.println("Please enter your letter grade for this class: ");
             //grades = gradeCheck.next().charAt(0);
-            totalHours=totalHours+hours;
+
 
             if(e.getSource()==Agrade)
             {
-                gradeValue=hours*1;
+                gradeValue=4;
             }
             else if(e.getSource()==Bgrade)
             {
-                gradeValue=hours*(3/4);
+                gradeValue=3;
             }
             else if(e.getSource()==Cgrade)
             {
-                gradeValue=hours/2;
+                gradeValue=2;
             }
             else if(e.getSource()==Dgrade)
             {
-                gradeValue=hours/4;
+                gradeValue=1;
             }
             else if(e.getSource()==Fgrade)
             {
                 gradeValue=0;
             }
-            totalHoursEarned=totalHoursEarned+gradeValue;
-        }
-        gpa =(totalHoursEarned/totalHours)*4;
-        System.out.printf("Your GPA is %0.2f\n",gpa);
-
+            if(e.getSource() == Submit) {
+                totalHours+=hours;
+                totalHoursEarned = totalHoursEarned + gradeValue;
+                System.out.println("Grade: "+gradeValue+"\nHours: "+hours);
+                gpa = (gradeValue / totalHours)*4;
+                System.out.printf("Your GPA is " +gpa);
+            }
     }
 
 }
