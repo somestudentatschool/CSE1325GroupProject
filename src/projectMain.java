@@ -18,7 +18,7 @@ class selectListener implements ActionListener
 //OMAIR'S Additon GUI
     class menuinterface extends JFrame
     {
-        menuinterface(String userName)
+        menuinterface(String userName, String degree)
         {
 
             JFrame cool = new JFrame("Welcome");
@@ -58,30 +58,31 @@ class selectListener implements ActionListener
     class loginScreen extends JFrame implements ActionListener
     {
         JPanel panel;
-        JLabel userLabel, passwordLabel, message;
+        JLabel userLabel, message;
+        JLabel degreeLabel = new JLabel("Choose you degree: ");
         JTextField userText;
-        JPasswordField passwordText;
-        JButton submit,cancel;
-
+        String[] degrees = {"Computer Science", "Biomedical", "Mechanical"};
+        JComboBox<String> comboDegree = new JComboBox<>(degrees);
+        //JPasswordField passwordText;
+        JButton submit;
+        String userName, item;
         loginScreen()
         {
             //username labels
             userLabel = new JLabel();
-            userLabel.setText("Username: ");
+            userLabel.setText("Enter you name: ");
+            //degreeLabel.setText("Choose your degree: ");
             userText = new JTextField();
-
-            //password labels
-            passwordLabel = new JLabel();
-            passwordLabel.setText("Password: ");
-            passwordText = new JPasswordField();
 
             //Submit button
             submit = new JButton("SUBMIT");
-            panel = new JPanel(new GridLayout(3, 1));
+            panel = new JPanel(new GridLayout(3, 2));
             panel.add(userLabel);
             panel.add(userText);
-            panel.add(passwordLabel);
-            panel.add(passwordText);
+            panel.add(degreeLabel);
+            panel.add(comboDegree);
+            //panel.add(passwordLabel);
+            //panel.add(passwordText);
             message = new JLabel();
             panel.add(message);
             panel.add(submit);
@@ -95,22 +96,25 @@ class selectListener implements ActionListener
             setVisible(true);
         }
 
+
         @Override
         public void actionPerformed(ActionEvent e)
         {
-            String userName = userText.getText();
-            String passWord = passwordText.getText();
-            
-            if(userName.trim().equals("admin") && passWord.trim().equals("admin"))
-            {
-                message.setText(" Hello "+ userName + "");
-                new menuinterface(userName);
-            }
-            else
-            {
-                message.setText(" Invalid user...");
+            userName = userText.getText();
+            System.out.println(userText.getText());
+            item = (String)comboDegree.getSelectedItem();
+            System.out.println(item);
+            setVisible(false);
+            menuinterface menu = new menuinterface(userName, item);
+        }
+        public String getUserName()
+        {
+            return userName;
+        }
 
-            }
+        public String getDegree()
+        {
+            return item;
         }
 }
 
@@ -121,6 +125,7 @@ class selectListener implements ActionListener
             //creating login GUI
             loginScreen login=new loginScreen();
             GPA calci=new GPA();
+
 
             //code GUI stuff here,not finished yet - Efaz
            /* String[] degrees = new String[]{"Computer Science", "Nursing", "Mechanical"};
