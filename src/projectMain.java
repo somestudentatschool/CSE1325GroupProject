@@ -10,9 +10,11 @@ import java.io.*;
 class classScreen extends JFrame implements ActionListener //going to implement the class screen at 3
 {
     JFrame class1 = new JFrame();
-    classScreen()
+    DegreePlan degreePlan;
+    classScreen(DegreePlan degreeplan)
     {
-
+        degreePlan = degreeplan;
+        DegreePlan.readDegreePlans();
     }
 
     @Override
@@ -39,19 +41,19 @@ class classScreen extends JFrame implements ActionListener //going to implement 
             if(degree.equals("Computer Science"))
             {
                 System.out.println("Degree is comp Sci");
-                Degree degree1 = Degree.CSE;
+                degree1 = Degree.CSE;
                 degreeplan = new DegreePlan(degree1);
             }
             else if(degree.equals("Biomedical"))
             {
                 System.out.println("Degree is bio");
-                Degree degree1 = Degree.BIOMED;
+                degree1 = Degree.BIOMED;
                 degreeplan = new DegreePlan(degree1);
             }
             else
             {
                 System.out.println("Degree is mechanical");
-                Degree degree1 = Degree.MECHANICAL;
+                degree1 = Degree.MECHANICAL;
                 degreeplan = new DegreePlan(degree1);
             }
             cool.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
