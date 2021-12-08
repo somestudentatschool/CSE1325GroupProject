@@ -1,42 +1,35 @@
 package DegreePlan;
 
+import java.io.*; //includes FileReader and BufferedReader
 
 public class DegreePlan
 {
     Degree degree; //This is the enum-Colby
     private int students;
-    /*Was thinking we could use an enum and get information using it,
-    like if we need to get how many students are enrolled in classes
-    and in a specific major.*/
+    private String filename;
+    public DegreePlan(Degree degree) {
+        this.degree = degree;
+    }
 
-    //I'm putting the enum into a different class. Leaving the original commented out.- Colby
-
-    /*public enum Degree {
-        Computer_Science(1),
-        Nursing(2),
-        Mechanical(1),
-        Accounting(3),
-        Chemistry(4);
-    }*/
-        public DegreePlan(Degree degree)
-        {
-            this.degree = degree;
-        }
-
-        public void getDegreePlan() /*This isn't finished yet. It's supposed to get the
+    public void getDegreePlan() /*This isn't finished yet. It's supposed to get the
                                       classes for the degrees using the enum- Colby*/
         {
             switch(degree)
             {
                 case CSE:
+                    filename = "CSE.txt";
                     break;
                 case NURSING:
+                    filename = "Nursing.txt";
                     break;
                 case MECHANICAL:
+                    filename = "Mechanical.txt";
                     break;
                 case CHEMISTRY:
+                    filename = "Chemistry.txt";
                     break;
                 case ACCOUNTING:
+                    filename = "Accounting.txt";
                     break;
             }
         }
@@ -48,5 +41,28 @@ public class DegreePlan
 
         public int getStudents() {
             return students;
+        }
+
+        //since we are reading in files, I thought that maybe we should use a try-catch method to read in
+        //the files, might be a tad bit buggy so let me know if I need to fix anything - Efaz
+        public void readDegreePlans()
+        {
+            try
+            {
+                FileReader degreePlans = new FileReader(filename);
+                BufferedReader someDegree = new BufferedReader(degreePlans);
+
+                String line = null;
+                while((line = someDegree.readLine()) != null)
+                {
+                    System.out.println(line);
+                }
+                someDegree.close();
+            }
+
+            catch(Exception e)
+            {
+                e.printStackTrace();
+            }
         }
 }
