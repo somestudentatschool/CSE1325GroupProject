@@ -7,10 +7,12 @@ public class People {
     String password;
     String degree;
 
-    //Person constructor using their name and ID
-    public People(String name, int ID)
+    //Person constructor using their username, password, and degree
+    public People(String username, String password, String degree)
     {
-        this.name = name;
-        this.ID = ID;
+        this.username = username;
+        this.password = password;
+        this.degree = degree;
     }
+
 }
