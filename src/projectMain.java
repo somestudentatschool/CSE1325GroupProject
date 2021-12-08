@@ -5,6 +5,7 @@ import java.awt.*;
 import Grades.*;
 import People.*;
 import DegreePlan.*;
+import java.io.*;
 
 class selectListener implements ActionListener
 { //added this for the combo box which I'll finish later-Colby
@@ -22,7 +23,7 @@ class selectListener implements ActionListener
 
             JFrame cool = new JFrame("Welcome");
             cool.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-            cool.setSize(800,800);
+            cool.setSize(1270,720);
             cool.setVisible(true);
             cool.setLayout(new GridLayout(2,3));
             JLabel lite = new JLabel();
@@ -99,6 +100,7 @@ class selectListener implements ActionListener
         {
             String userName = userText.getText();
             String passWord = passwordText.getText();
+            
             if(userName.trim().equals("admin") && passWord.trim().equals("admin"))
             {
                 message.setText(" Hello "+ userName + "");

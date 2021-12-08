@@ -17,19 +17,13 @@ public class DegreePlan
             switch(degree)
             {
                 case CSE:
-                    filename = "CSE.txt";
+                    filename = "CompSci.txt";
                     break;
-                case NURSING:
-                    filename = "Nursing.txt";
+                case BIOMED:
+                    filename = "BEPlan.txt";
                     break;
                 case MECHANICAL:
-                    filename = "Mechanical.txt";
-                    break;
-                case CHEMISTRY:
-                    filename = "Chemistry.txt";
-                    break;
-                case ACCOUNTING:
-                    filename = "Accounting.txt";
+                    filename = "MEPlan.txt";
                     break;
             }
         }
@@ -52,10 +46,10 @@ public class DegreePlan
                 FileReader degreePlans = new FileReader(filename);
                 BufferedReader someDegree = new BufferedReader(degreePlans);
 
-                String line = null;
+                String line;
                 while((line = someDegree.readLine()) != null)
                 {
-                    System.out.println(line);
+
                 }
                 someDegree.close();
             }
