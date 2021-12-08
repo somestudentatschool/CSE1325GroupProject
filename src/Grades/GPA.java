@@ -12,10 +12,8 @@ public class GPA implements ActionListener
     // Omair's addition to gpacal
     char grades;
     double gpa;
-    int credits,hours,gradeValue;
-    double totalHours = 0.00;
-    double totalHoursEarned = 0.00;
-    int totalCredits = 40;
+    double hours,gradeValue;
+    double totalHours,credits = 0.00;
     JFrame calculator = new JFrame("GPA CAL");
     JButton _4hour,_3hour,_2hour,_1hour,Agrade,Bgrade,Cgrade,Dgrade,Fgrade,Submit,exitout;
 
@@ -134,50 +132,49 @@ public class GPA implements ActionListener
             if(e.getSource()==_4hour)
             {
                 hours=4;
-                //totalHoursEarned+=hours;
             }
             else if(e.getSource()==_3hour)
             {
                 hours=3;
-                //totalHoursEarned+=hours;
             }
             else if(e.getSource()==_2hour)
             {
                 hours=2;
-               // totalHoursEarned+=hours;
             }
             else if(e.getSource()==_1hour)
             {
                 hours=1;
-               // totalHoursEarned+=hours;
             }
-            totalHoursEarned+=hours;
 
             if(e.getSource()==Agrade)
             {
-                gradeValue=4;
+                gradeValue=1;
             }
             else if(e.getSource()==Bgrade)
             {
-                gradeValue=3;
+                gradeValue=(0.75);
             }
             else if(e.getSource()==Cgrade)
             {
-                gradeValue=2;
+                gradeValue=(0.5);
             }
             else if(e.getSource()==Dgrade)
             {
-                gradeValue=1;
+                gradeValue=(0.25);
             }
             else if(e.getSource()==Fgrade)
             {
                 gradeValue=0;
             }
-            if(e.getSource() == Submit) {
-                System.out.println("Total hours = "+totalHoursEarned);
+            if(e.getSource() == Submit)
+            {
                 //totalHoursEarned = totalHoursEarned + gradeValue;
-                System.out.println("Grade: "+gradeValue+"\nHours: "+hours);
-                gpa = (gradeValue / totalHoursEarned)*4;
+                totalHours=totalHours+hours;
+                credits=credits+(hours*gradeValue);
+                System.out.println("Total hours = "+totalHours);
+                System.out.printf("\n");
+                System.out.println("Grade: "+(gradeValue*hours)+"\nHours: "+hours);
+                gpa = (credits/totalHours)*4;
                 System.out.printf("Your GPA is " +gpa);
             }
     }
