@@ -18,7 +18,7 @@ public class DegreePlan
             switch(degree)
             {
                 case CSE:
-                    filename = "CompSci.txt";
+                    filename = "CSPlan.txt";
                     break;
                 case BIOMED:
                     filename = "BEPlan.txt";
