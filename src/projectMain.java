@@ -2,6 +2,9 @@ import javax.swing.*;
 import javax.swing.border.LineBorder;
 import java.awt.event.*;
 import java.awt.*;
+import Grades.*;
+import People.*;
+import DegreePlan.*;
 
 class selectListener implements ActionListener
 { //added this for the combo box which I'll finish later-Colby
@@ -115,6 +118,7 @@ class selectListener implements ActionListener
         {
             //creating login GUI
             loginScreen login=new loginScreen();
+            GPA calci=new GPA();
 
             //code GUI stuff here,not finished yet - Efaz
            /* String[] degrees = new String[]{"Computer Science", "Nursing", "Mechanical"};
