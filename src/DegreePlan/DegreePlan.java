@@ -6,6 +6,7 @@ public class DegreePlan
 {
     Degree degree; //This is the enum-Colby
     private int students;
+    private String filename;
     public DegreePlan(Degree degree) {
         this.degree = degree;
     }
@@ -16,14 +17,19 @@ public class DegreePlan
             switch(degree)
             {
                 case CSE:
+                    filename = "CSE.txt";
                     break;
                 case NURSING:
+                    filename = "Nursing.txt";
                     break;
                 case MECHANICAL:
+                    filename = "Mechanical.txt";
                     break;
                 case CHEMISTRY:
+                    filename = "Chemistry.txt";
                     break;
                 case ACCOUNTING:
+                    filename = "Accounting.txt";
                     break;
             }
         }
@@ -43,7 +49,7 @@ public class DegreePlan
         {
             try
             {
-                FileReader degreePlans = new FileReader("");
+                FileReader degreePlans = new FileReader(filename);
                 BufferedReader someDegree = new BufferedReader(degreePlans);
 
                 String line = null;
