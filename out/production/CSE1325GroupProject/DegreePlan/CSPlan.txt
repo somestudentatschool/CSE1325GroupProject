@@ -1,10 +1,10 @@
-CSE-1310,3,INTRODUCTION TO PROGRAMMING
-CSE-1320,3,INTERMEDIATE PROGRAMMING
-CSE-1325,3,OBJECT ORIENTED PROGRAMMING
-CSE-2312,3,COMPUTER ORG. AND ASSEMBLY LANGUAGE
-CSE-2315,3,DISCRETE STRUCTURES
-CSE-3315,3,THEORETICAL CS
-CSE-3318,3,ALGORITHMS AND DATA STRUCTURES
-CSE-3320,3,OPERATING SYSTEMS
-CSE-4316,3,SENIOR DESIGN ONE
-CSE-4317,3,SENIOR DESIGN TWO
+CSE-1310,3,INTRODUCTION TO PROGRAMMING,An introduction to the computer, to the algorithmic process, and to programming using basic control and data structures, using a procedural language.,C or better in MATH-1302
+CSE-1320,3,INTERMEDIATE PROGRAMMING,Programming concepts beyond basic control and data structures. Emphasis is given to data structures including linked-lists and trees as well as modular design consistent with software engineering principles.,C or better in CSE-1310
+CSE-1325,3,OBJECT ORIENTED PROGRAMMING,Object-oriented concepts, class diagrams, collection classes, generics, polymorphism, and reusability.,CSE-1320
+CSE-2312,3,COMPUTER ORG. AND ASSEMBLY LANGUAGE,Computer organization from the viewpoint of software, including instruction set architectures, memory addressing, integer and floating-point representation and arithmetic, instruction pipelining, cache, memory virtualization, and I/O.,C or better in CSE 1320
+CSE-2315,3,DISCRETE STRUCTURES,Propositional and predicate logic, mathematical proof techniques, sets, combinatorics, functions and relations, graphs, and graph algorithms.,C or better in CSE-1310
+CSE-3315,3,THEORETICAL CS,Selected theoretical concepts including regular and context free languages, finite state and pushdown automata, Turing machines, computability, and NP-completeness.,C or better in CSE-2315
+CSE-3318,3,ALGORITHMS AND DATA STRUCTURES,Design and analysis of algorithms with an emphasis on data structures. Approaches to analyzing lower bounds on problems and upper bounds on algorithms.CSE-1320 and CSE-2315
+CSE-3320,3,OPERATING SYSTEMS,Functions and components of an operating system, including process synchronization, job scheduling, memory management, file systems protection, and deadlocks.,C or better in CSE-2312
+CSE-4316,3,SENIOR DESIGN ONE,Analysis and design of an industry-type project that involves hardware and software components to meet desired needs within realistic constraints and standards.,CSE-3320
+CSE-4317,3,SENIOR DESIGN TWO,Implementation, integration, quality assurance through peer review and testing, and deployment of the project designed in CSE 4316.,C or better in 4316
