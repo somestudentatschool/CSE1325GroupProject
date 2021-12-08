@@ -1,0 +1,10 @@
+BE-1105,Med Appl of Engineering
+BE-1325,Intro to Bioengineering
+BE-2310,Eng Appro Solving Clinical Challenges
+BE-3301
+BE-3310
+BE-3317
+BE-3320
+BE-4312
+BE-4385
+BE-4388

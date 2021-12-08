@@ -3,8 +3,9 @@ package People;
 public class People {
 
     //variables used to make a random person constructor
-    String name;
-    int ID;
+    String username;
+    String password;
+    String degree;
 
     //Person constructor using their name and ID
     public People(String name, int ID)
