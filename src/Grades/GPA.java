@@ -126,6 +126,7 @@ public class GPA implements ActionListener
     @Override
     public void actionPerformed(ActionEvent e)
     {
+
         if(e.getSource()==exitout)
         {
             System.exit(0);
@@ -133,20 +134,24 @@ public class GPA implements ActionListener
             if(e.getSource()==_4hour)
             {
                 hours=4;
+                //totalHoursEarned+=hours;
             }
             else if(e.getSource()==_3hour)
             {
                 hours=3;
+                //totalHoursEarned+=hours;
             }
             else if(e.getSource()==_2hour)
             {
                 hours=2;
+               // totalHoursEarned+=hours;
             }
             else if(e.getSource()==_1hour)
             {
                 hours=1;
+               // totalHoursEarned+=hours;
             }
-
+            totalHoursEarned+=hours;
 
             if(e.getSource()==Agrade)
             {
@@ -169,10 +174,10 @@ public class GPA implements ActionListener
                 gradeValue=0;
             }
             if(e.getSource() == Submit) {
-                totalHours+=hours;
-                totalHoursEarned = totalHoursEarned + gradeValue;
+                System.out.println("Total hours = "+totalHoursEarned);
+                //totalHoursEarned = totalHoursEarned + gradeValue;
                 System.out.println("Grade: "+gradeValue+"\nHours: "+hours);
-                gpa = (gradeValue / totalHours)*4;
+                gpa = (gradeValue / totalHoursEarned)*4;
                 System.out.printf("Your GPA is " +gpa);
             }
     }
