@@ -31,7 +31,7 @@ public class DegreePlan
 
         //since we are reading in files, I thought that maybe we should use a try-catch method to read in
         //the files, might be a tad bit buggy so let me know if I need to fix anything - Efaz
-        public static void readDegreePlans()
+        public void readDegreePlans()
         {
             int count = 0;
             try
