@@ -9,6 +9,12 @@ import java.io.*;
 
 class classScreen extends JFrame implements ActionListener //going to implement the class screen at 3
 {
+    JFrame class1 = new JFrame();
+    classScreen()
+    {
+
+    }
+
     @Override
     public void actionPerformed(ActionEvent e)
     {
@@ -20,13 +26,12 @@ class classScreen extends JFrame implements ActionListener //going to implement 
 //OMAIR'S Additon GUI
     class menuinterface extends JFrame implements ActionListener
     {
+        JFrame cool = new JFrame("Welcome");
         JButton homebutton = new JButton("HOME");
         JButton classbutton = new JButton("Classes");
         JButton gpacalbutton = new JButton("MY GPA");
         menuinterface(String userName, String degree)
         {
-
-            JFrame cool = new JFrame("Welcome");
             cool.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             cool.setSize(1270,720);
             cool.setVisible(true);
@@ -64,7 +69,7 @@ class classScreen extends JFrame implements ActionListener //going to implement 
         {
             if(e.getSource() == classbutton)
             {
-                setVisible(false);
+                cool.setVisible(false);
                 classScreen class1 = new classScreen();
             }
         }

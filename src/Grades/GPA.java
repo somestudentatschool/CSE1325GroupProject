@@ -16,11 +16,11 @@ public class GPA implements ActionListener
     double totalHours = 0.00;
     double totalHoursEarned = 0.00;
     int totalCredits = 40;
+    JFrame calculator = new JFrame("GPA CAL");
     JButton _4hour,_3hour,_2hour,_1hour,Agrade,Bgrade,Cgrade,Dgrade,Fgrade,Submit,exitout;
 
     public GPA()
     {
-        JFrame calculator = new JFrame("GPA CAL");
         calculator.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         JLabel chours = new JLabel("HOW MANY CREDIT HOURS IS THE COURSE?");
         JLabel cgrade = new JLabel("WHAT GRADE DID YOU EARN?");
