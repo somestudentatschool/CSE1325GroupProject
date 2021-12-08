@@ -6,4 +6,5 @@ public class Mechanical extends DegreePlan
     {
         super(degree);
     }
+	
 }
