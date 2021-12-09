@@ -13,4 +13,14 @@ public class People {
         this.degree = degree;
     }
 
+    public String getDegree()
+    {
+        return degree;
+    }
+
+    public String getUsername()
+    {
+        return username;
+    }
+
 }

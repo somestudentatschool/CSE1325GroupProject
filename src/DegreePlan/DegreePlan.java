@@ -28,22 +28,37 @@ public class DegreePlan
                     break;
             }
         }
+        public String[] getList()
+        {
+            return classNum;
+        }
+
+        public String[] getHours()
+        {
+            return hours;
+        }
+
+        public String[] getName()
+        {
+            return nameOfClass;
+        }
 
         //since we are reading in files, I thought that maybe we should use a try-catch method to read in
         //the files, might be a tad bit buggy so let me know if I need to fix anything - Efaz
         public void readDegreePlans()
         {
+            System.out.println("Filename: "+filename);
             int count = 0;
             try
             {
-                FileReader degreePlans = new FileReader(filename);
+                FileReader degreePlans = new FileReader(filename+"");
                 BufferedReader someDegree = new BufferedReader(degreePlans);
 
                 String line;
                 while((line = someDegree.readLine()) != null)
                 {
                     line = someDegree.readLine();
-                    String[] parsedInfo = line.split("[,]");
+                    String[] parsedInfo = line.split("[-]");
                     classNum[count] = parsedInfo[0];
                     hours[count] = parsedInfo[1];
                     nameOfClass[count] = parsedInfo[2];
