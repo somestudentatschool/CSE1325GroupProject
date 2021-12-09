@@ -122,6 +122,10 @@ class classScreen extends JFrame implements ActionListener //going to implement 
                 classScreen classes = new classScreen(degreeplan, user);
 
             }
+            else if(e.getSource()==gpacalbutton)
+            {
+                new GPA();
+            }
         }
     }
     //Added the login screen with GUI implementation
