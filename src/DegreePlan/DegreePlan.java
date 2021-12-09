@@ -51,6 +51,11 @@ public class DegreePlan
             return nameOfClass;
         }
 
+        public String[] getDescription()
+    {
+        return description;
+    }
+
         //since we are reading in files, I thought that maybe we should use a try-catch method to read in
         //the files, might be a tad bit buggy so let me know if I need to fix anything - Efaz
         public void readDegreePlans()
@@ -65,7 +70,7 @@ public class DegreePlan
                 String line;
                 while((line = someDegree.readLine()) != null)
                 {
-                    line = someDegree.readLine();
+                    //line = someDegree.readLine();
                     String[] parsedInfo = line.split("~");
                     classNum[count] =  parsedInfo[0];
                     hours[count] = parsedInfo[1];

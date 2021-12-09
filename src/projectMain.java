@@ -7,43 +7,156 @@ import People.*;
 import DegreePlan.*;
 import java.io.*;
 
+
+class courseScreen extends JFrame implements ActionListener
+{
+    JButton close;
+    JFrame courseFrame;
+    courseScreen(String hours, String name, String description)
+    {
+        JPanel p1 = new JPanel();
+        close = new JButton("Close");
+        courseFrame = new JFrame("Courses");
+        JLabel degreeName = new JLabel(name);
+        JLabel degreeHour = new JLabel("Credit Hours = "+hours);
+        JLabel degreeDesc = new JLabel(description);
+        courseFrame.setDefaultCloseOperation(courseFrame.EXIT_ON_CLOSE);
+        courseFrame.setSize(500,500);
+        close.addActionListener(this);
+        //courseFrame.setLayout(new GridLayout(3,1));
+        p1.add(degreeName);
+        p1.add(degreeHour);
+        courseFrame.add(p1, BorderLayout.PAGE_START);
+        courseFrame.add(degreeDesc, BorderLayout.CENTER);
+        courseFrame.add(close, BorderLayout.PAGE_END);
+        courseFrame.setVisible(true);
+    }
+    @Override
+    public void actionPerformed(ActionEvent e)
+    {
+        if(e.getSource() == close)
+        {
+            courseFrame.dispose();
+        }
+    }
+}
 class classScreen extends JFrame implements ActionListener //going to implement the class screen at 3
 {
     JFrame classFrame = new JFrame("Classes");
     DegreePlan degreePlan;
     JPanel classpanel;
     JLabel degree2, message;
-    String[] classList, hours, name;
-    JButton class1 , class2, class3, class4, class5, class6, class7, class8, class9, class10; //for classes
+    String[] classList, hours, name, description;
+    JButton class1 , class2, class3, class4, class5, class6, class7, class8, class9, class10, exit; //for classes
     //JLabel degreeLabel = new JLabel("Choose your degree: ");
     classScreen(DegreePlan degreeplan, People p1)
     {
+        classFrame.setDefaultCloseOperation(classFrame.EXIT_ON_CLOSE);
+        classFrame.setSize(1270,720);
+        classFrame.setVisible(true);
+        classFrame.setLayout(new GridLayout(2,3));
         degreePlan = degreeplan;
         degreePlan.getDegreePlan();
         degreePlan.readDegreePlans();
         classList = degreePlan.getLists();
         hours = degreePlan.getHours();
         name = degreePlan.getName();
+        description = degreeplan.getDescription();
         degree2 = new JLabel(p1.getDegree()+" Degree Courses: ");
-        classpanel = new JPanel(new GridLayout(10, 1));
-        classpanel.add(degree2);
+        classFrame.setLayout(new GridLayout(12, 1));
+        class1 = new JButton(classList[0]);
+        class2 = new JButton(classList[1]);
+        class3 = new JButton(classList[2]);
+        class4 = new JButton(classList[3]);
+        class5 = new JButton(classList[4]);
+        class6 = new JButton(classList[5]);
+        class7 = new JButton(classList[6]);
+        class8 = new JButton(classList[7]);
+        class9 = new JButton(classList[8]);
+        class10 = new JButton(classList[9]);
+        exit = new JButton("Exit");
+        exit.addActionListener(this);
+        class1.addActionListener(this);
+        class2.addActionListener(this);
+        class3.addActionListener(this);
+        class4.addActionListener(this);
+        class5.addActionListener(this);
+        class6.addActionListener(this);
+        class7.addActionListener(this);
+        class8.addActionListener(this);
+        class9.addActionListener(this);
+        class10.addActionListener(this);
+        classFrame.add(degree2);
+        classFrame.add(class1);
+        classFrame.add(class2);
+        classFrame.add(class3);
+        classFrame.add(class4);
+        classFrame.add(class5);
+        classFrame.add(class6);
+        classFrame.add(class7);
+        classFrame.add(class8);
+        classFrame.add(class9);
+        classFrame.add(class10);
+        classFrame.add(exit);
        // classpanel.add(degreeLabel);
-        message = new JLabel();
-        classpanel.add(message);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        //message = new JLabel();
+        //classpanel.add(message);
+        //setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         //adding listeners
-        add(classpanel,BorderLayout.CENTER);
-        setTitle("Classes Available ");
-        setSize(450,350);
-        setVisible(true);
+        //add(classpanel,BorderLayout.CENTER);
+       // setTitle("Classes Available ");
+        //setSize(450,350);
+        classFrame.setVisible(true);
 
     }
 
     @Override
     public void actionPerformed(ActionEvent e)
     {
-        setVisible(false);
-
+        if(e.getSource() == exit)
+        {
+            classFrame.dispose();
+        }
+        else if(e.getSource() == class1)
+        {
+            courseScreen c1 =new courseScreen(hours[0], name[0], description[0]);
+        }
+        else if(e.getSource() == class2)
+        {
+            courseScreen c1 =new courseScreen(hours[1], name[1], description[1]);
+        }
+        else if(e.getSource() == class3)
+        {
+            courseScreen c1 =new courseScreen(hours[2], name[2], description[2]);
+        }
+        else if(e.getSource() == class4)
+        {
+            courseScreen c1 =new courseScreen(hours[3], name[3], description[3]);
+        }
+        else if(e.getSource() == class5)
+        {
+            courseScreen c1 =new courseScreen(hours[4], name[4], description[4]);
+        }
+        else if(e.getSource() == class6)
+        {
+            courseScreen c1 =new courseScreen(hours[5], name[5], description[5]);
+        }
+        else if(e.getSource() == class7)
+        {
+            courseScreen c1 =new courseScreen(hours[6], name[6], description[6]);
+        }
+        else if(e.getSource() == class8)
+        {
+            courseScreen c1 =new courseScreen(hours[7], name[7], description[7]);
+        }
+        else if(e.getSource() == class9)
+        {
+            courseScreen c1 =new courseScreen(hours[8], name[8], description[8]);
+        }
+        else if(e.getSource() == class10)
+        {
+            courseScreen c1 =new courseScreen(hours[9], name[9], description[9]);
+        }
     }
 }
 

@@ -129,7 +129,7 @@ public class GPA implements ActionListener
 
         if(e.getSource()==exitout)
         {
-            System.exit(0);
+            calculator.dispose();
         }
             if(e.getSource()==_4hour)
             {
