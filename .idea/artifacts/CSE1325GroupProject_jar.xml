@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="jar" name="CSE1325GroupProject:jar">
-    <output-path>$PROJECT_DIR$/out/artifacts/CSE1325GroupProject_jar</output-path>
-    <root id="archive" name="CSE1325GroupProject.jar">
-      <element id="module-output" name="CSE1325GroupProject" />
-    </root>
-  </artifact>
-</component>
