@@ -55,12 +55,15 @@ class classScreen extends JFrame implements ActionListener //going to implement 
         DegreePlan degreeplan;
         Degree degree1;
         String degree;
+        String userName;
         JFrame cool = new JFrame("Welcome");
         JButton homebutton = new JButton("HOME");
         JButton classbutton = new JButton("Classes");
         JButton gpacalbutton = new JButton("MY GPA");
+
         menuinterface(String userName, String degree)
         {
+            this.userName=userName;
             user = new People(userName, degree);
             this.degree = degree;
             if(degree.equals("Computer Science"))
@@ -126,6 +129,10 @@ class classScreen extends JFrame implements ActionListener //going to implement 
             {
                 new GPA();
             }
+            else if(e.getSource()==homebutton)
+            {
+                new menuinterface(userName,degree);
+            }
         }
     }
     //Added the login screen with GUI implementation
@@ -139,7 +146,8 @@ class classScreen extends JFrame implements ActionListener //going to implement 
         JComboBox<String> comboDegree = new JComboBox<>(degrees);
         //JPasswordField passwordText;
         JButton submit;
-        String userName, item;
+        String userName,item;
+
         loginScreen()
         {
             //username labels
