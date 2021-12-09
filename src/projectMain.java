@@ -194,6 +194,6 @@ class classScreen extends JFrame implements ActionListener //going to implement 
         {
             //creating login GUI
             loginScreen login=new loginScreen();
-            GPA calci=new GPA();
+            //GPA calci=new GPA();
         }
 }
