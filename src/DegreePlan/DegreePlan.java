@@ -11,8 +11,10 @@ public class DegreePlan
 
     //testing to see why it keeps getting null errors
     String[] classNum = new String[10];
-    String [] hours = new String[10];
-    String [] nameOfClass = new String[10];
+    String[] hours = new String[10];
+    String[] nameOfClass = new String[10];
+    String[] description = new String[10];
+    //String[] classNum, hours, nameOfClass, description;
 
     public DegreePlan(Degree degree) {
         this.degree = degree;
@@ -51,7 +53,7 @@ public class DegreePlan
 
         //since we are reading in files, I thought that maybe we should use a try-catch method to read in
         //the files, might be a tad bit buggy so let me know if I need to fix anything - Efaz
-        /*public void readDegreePlans()
+        public void readDegreePlans()
         {
             System.out.println("Filename: "+filename);
             int count = 0;
@@ -64,10 +66,12 @@ public class DegreePlan
                 while((line = someDegree.readLine()) != null)
                 {
                     line = someDegree.readLine();
-                    String[] parsedInfo = line.split("-");
+                    String[] parsedInfo = line.split("~");
                     classNum[count] =  parsedInfo[0];
                     hours[count] = parsedInfo[1];
                     nameOfClass[count] = parsedInfo[2];
+                    description[count] = parsedInfo[3];
+                    System.out.println("ClassNum = "+classNum[count]+"\nhours = "+hours[count]+"\nnameOfClass = "+nameOfClass[count]+"\ndescription = "+description[count]);
                     count++;
                 }
                 someDegree.close();
@@ -77,5 +81,5 @@ public class DegreePlan
             {
                 e.printStackTrace();
             }
-        }*/
+        }
 }
