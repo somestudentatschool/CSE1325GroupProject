@@ -16,19 +16,21 @@ public class GPA implements ActionListener
     double totalHours,credits = 0.00;
     JFrame calculator = new JFrame("GPA CAL");
     JButton _4hour,_3hour,_2hour,_1hour,Agrade,Bgrade,Cgrade,Dgrade,Fgrade,Submit,exitout;
-
+    JLabel chours,cgrade,outputty;
     public GPA()
     {
         calculator.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        JLabel chours = new JLabel("HOW MANY CREDIT HOURS IS THE COURSE?");
-        JLabel cgrade = new JLabel("WHAT GRADE DID YOU EARN?");
+        chours = new JLabel("HOW MANY CREDIT HOURS IS THE COURSE?:");
+        cgrade = new JLabel("WHAT GRADE DID YOU EARN?:");
+        outputty=new JLabel("Your GPA IS :");
         calculator.setLayout(new GridLayout(3, 2));
         calculator.setSize(800, 550);
         calculator.setVisible(true);
-        JPanel topleft = new JPanel();
-        JPanel topright = new JPanel();
-        topleft.add(chours, BorderLayout.CENTER);
-        topright.add(cgrade, BorderLayout.CENTER);
+        JPanel topleft = new JPanel(new GridLayout(2,1));
+        JPanel topright = new JPanel(new GridLayout(2,1));
+        topleft.add(chours);
+        topleft.add(outputty);
+        topright.add(cgrade);
         calculator.add(topleft);
         calculator.add(topright);
         JPanel left1 = new JPanel(new GridLayout(4, 1));
@@ -172,10 +174,13 @@ public class GPA implements ActionListener
                 totalHours=totalHours+hours;
                 credits=credits+(hours*gradeValue);
                 System.out.println("Total hours = "+totalHours);
+                chours.setText("HOW MANY CREDIT HOURS IS THE COURSE?:"+hours);
                 System.out.printf("\n");
                 System.out.println("Grade: "+(gradeValue*hours)+"\nHours: "+hours);
+                cgrade.setText("WHAT GRADE DID YOU EARN?:"+(hours*gradeValue));
                 gpa = (credits/totalHours)*4;
                 System.out.printf("Your GPA is " +gpa);
+                outputty.setText("Your GPA IS :"+gpa);
             }
     }
 
