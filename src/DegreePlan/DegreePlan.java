@@ -2,12 +2,18 @@ package DegreePlan;
 
 import java.io.*; //includes FileReader and BufferedReader
 import java.util.Scanner;
+
 public class DegreePlan
 {
     Degree degree; //This is the enum-Colby
     private int students;
     private static String filename;
-    String[] classNum, hours, nameOfClass;
+
+    //testing to see why it keeps getting null errors
+    String[] classNum = new String[10];
+    String [] hours = new String[10];
+    String [] nameOfClass = new String[10];
+
     public DegreePlan(Degree degree) {
         this.degree = degree;
     }
@@ -59,7 +65,7 @@ public class DegreePlan
                 {
                     line = someDegree.readLine();
                     String[] parsedInfo = line.split("[-]");
-                    classNum[count] = parsedInfo[0];
+                    classNum[count] =  parsedInfo[0];
                     hours[count] = parsedInfo[1];
                     nameOfClass[count] = parsedInfo[2];
                     count++;
