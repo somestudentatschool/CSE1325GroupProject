@@ -7,7 +7,7 @@ public class DegreePlan
     Degree degree; //This is the enum-Colby
     private int students;
     private static String filename;
-    private static String[] classNum, hours, nameOfClass;
+    String[] classNum, hours, nameOfClass;
     public DegreePlan(Degree degree) {
         this.degree = degree;
     }
@@ -28,7 +28,7 @@ public class DegreePlan
                     break;
             }
         }
-        public String[] getList()
+        public String[] getLists()
         {
             return classNum;
         }
@@ -51,7 +51,7 @@ public class DegreePlan
             int count = 0;
             try
             {
-                FileReader degreePlans = new FileReader(filename+"");
+                FileReader degreePlans = new FileReader("src/DegreePlan/CSPlan.txt");
                 BufferedReader someDegree = new BufferedReader(degreePlans);
 
                 String line;
@@ -62,7 +62,7 @@ public class DegreePlan
                     classNum[count] = parsedInfo[0];
                     hours[count] = parsedInfo[1];
                     nameOfClass[count] = parsedInfo[2];
-
+                    count++;
                 }
                 someDegree.close();
             }
