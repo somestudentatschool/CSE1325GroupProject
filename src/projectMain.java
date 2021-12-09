@@ -9,18 +9,40 @@ import java.io.*;
 
 class classScreen extends JFrame implements ActionListener //going to implement the class screen at 3
 {
-    JFrame class1 = new JFrame();
+    JFrame classFrame = new JFrame("Classes");
     DegreePlan degreePlan;
-    classScreen(DegreePlan degreeplan)
+    JPanel classpanel;
+    JLabel degree2, message;
+    String[] classList, hours, name;
+    JButton class1 , class2, class3, class4, class5, class6, class7, class8, class9, class10;
+    //JLabel degreeLabel = new JLabel("Choose your degree: ");
+    classScreen(DegreePlan degreeplan, People p1)
     {
         degreePlan = degreeplan;
         degreePlan.getDegreePlan();
         degreePlan.readDegreePlans();
+        classList = degreePlan.getList();
+        hours = degreePlan.getHours();
+        name = degreePlan.getName();
+        degree2 = new JLabel(p1.getDegree()+" Degree Courses: ");
+        classpanel = new JPanel(new GridLayout(10, 1));
+        classpanel.add(degree2);
+       // classpanel.add(degreeLabel);
+        message = new JLabel();
+        classpanel.add(message);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        //adding listeners
+        add(classpanel,BorderLayout.CENTER);
+        setTitle("Classes Available ");
+        setSize(450,350);
+        setVisible(true);
+
     }
 
     @Override
     public void actionPerformed(ActionEvent e)
     {
+        setVisible(false);
 
     }
 }
@@ -29,6 +51,7 @@ class classScreen extends JFrame implements ActionListener //going to implement 
 //OMAIR'S Additon GUI
     class menuinterface extends JFrame implements ActionListener
     {
+        People user;
         DegreePlan degreeplan;
         Degree degree1;
         String degree;
@@ -38,6 +61,7 @@ class classScreen extends JFrame implements ActionListener //going to implement 
         JButton gpacalbutton = new JButton("MY GPA");
         menuinterface(String userName, String degree)
         {
+            user = new People(userName, degree);
             this.degree = degree;
             if(degree.equals("Computer Science"))
             {
@@ -95,6 +119,7 @@ class classScreen extends JFrame implements ActionListener //going to implement 
         {
             if(e.getSource() == classbutton)
             {
+                classScreen classes = new classScreen(degreeplan, user);
 
             }
         }

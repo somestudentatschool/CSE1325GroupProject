@@ -1,10 +1,10 @@
-MAE-1107,1,INTRODUCTION TO MECHANICAL ENGINEERING
-MAE-1140,1,PROBLEMS IN MECHANICAL AND AEROSPACE ENGINEERING
-MAE-1312,3,ENGINEERING STATISTICS
-MAE-2360,3,NUMERICAL ANALYSIS AND PROGRAMMING
-MAE-2381,3,EXPERIMENTAL METHODS AND MEASUREMENTS
-MAE-3310,3,THERMODYNAMICS ONE
-MAE-3311,3,THERMODYNAMICS TWO
-MAE-3344,3,INTRODUCTION TO MANUFACTURING ENGINEERING
-MAE-4287,2,DESIGN PROJECT ONE
-MAE-4342,3,MECHANICAL DESIGN TWO
+MAE-1107~1~INTRODUCTION TO MECHANICAL ENGINEERING~Introduction to basic engineering concepts.~C or better in MATH-1426
+MAE-1140~1~PROBLEMS IN MECHANICAL AND AEROSPACE ENGINEERING~Preparation for advanced study in mechanical and aerospace engineering curricula.~C or better in MATH1426
+MAE-1312~3~ENGINEERING STATISTICS~A study of forces and force systems resultants and components of force systems forces due to friction, conditions of equilibrium, forces acting on members of trusses and frame structures, centroids and moments of inertia.~C or better in each of the following: MAE-1140 MATH-1426 PHYS-1444
+MAE-2360~3~NUMERICAL ANALYSIS AND PROGRAMMING~Utilization of digital computers in mechanical and aerospace engineering. Computational algorithms and their representation in FORTRAN C and Matlab.~C or better in MATH 2425
+MAE-2381~3~EXPERIMENTAL METHODS AND MEASUREMENTS~Introduction to data analysis incorporating statistics and probability design and planning of engineering experiments for error prediction and control.~C or better in each of the following: MAE-1351 MATH-2425 PHYS-1443
+MAE-3310~3~THERMODYNAMICS ONE~Basic concepts and definitions properties of pure substances work and heat first law of thermodynamics second law of thermodynamics entropy thermodynamics of gases vapors, and liquids in various nonflow and flow processes, and irreversibility and availability.~CHEM-1465 CHEM-1442
+MAE-3311~3~THERMODYNAMICS TWO~Availability power refrigeration and heat pump cycles (both gas and vapor) property relations and equations of state ideal gas mixtures mixtures of gases and vapors psychrometrics adiabatic flame temperature thermochemical equilibrium and compressible flow.~C or better in each of the following: MAE-3313 MAE-3310
+MAE-3344~3~INTRODUCTION TO MANUFACTURING ENGINEERING~Introduction to casting forming machining and joining processes for metals and nonmetals.~MAE-2312 MAE-3324
+MAE-4287~2~DESIGN PROJECT ONE~Team engineering approach to a design project that integrates engineering knowledge from several courses.~MAE-4344
+MAE-4342~3~MECHANICAL DESIGN TWO~Analysis for the design and manufacture of basic mechanical elements and their role in the design of machines.~C or better in each of the following: MAE-3243 MAE-3318
