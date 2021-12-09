@@ -14,14 +14,14 @@ class classScreen extends JFrame implements ActionListener //going to implement 
     JPanel classpanel;
     JLabel degree2, message;
     String[] classList, hours, name;
-    JButton class1 , class2, class3, class4, class5, class6, class7, class8, class9, class10;
+    JButton class1 , class2, class3, class4, class5, class6, class7, class8, class9, class10; //for classes
     //JLabel degreeLabel = new JLabel("Choose your degree: ");
     classScreen(DegreePlan degreeplan, People p1)
     {
         degreePlan = degreeplan;
         degreePlan.getDegreePlan();
         degreePlan.readDegreePlans();
-        classList = degreePlan.getList();
+        classList = degreePlan.getLists();
         hours = degreePlan.getHours();
         name = degreePlan.getName();
         degree2 = new JLabel(p1.getDegree()+" Degree Courses: ");
