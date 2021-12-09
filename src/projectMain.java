@@ -20,7 +20,7 @@ class classScreen extends JFrame implements ActionListener //going to implement 
     {
         degreePlan = degreeplan;
         degreePlan.getDegreePlan();
-        degreePlan.readDegreePlans();
+        //degreePlan.readDegreePlans();
         classList = degreePlan.getLists();
         hours = degreePlan.getHours();
         name = degreePlan.getName();
