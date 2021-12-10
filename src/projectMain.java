@@ -253,7 +253,7 @@ class classScreen extends JFrame implements ActionListener //going to implement 
     {
         JPanel panel;
         JLabel userLabel, message;
-        JLabel degreeLabel = new JLabel("Choose you degree: ");
+        JLabel degreeLabel = new JLabel("Choose your degree: ");
         JTextField userText;
         String[] degrees = {"Computer Science", "Biomedical", "Mechanical"};
         JComboBox<String> comboDegree = new JComboBox<>(degrees);
@@ -261,11 +261,11 @@ class classScreen extends JFrame implements ActionListener //going to implement 
         JButton submit;
         String userName,item;
 
-        loginScreen()
+        loginScreen(boolean newUser)
         {
             //username labels
             userLabel = new JLabel();
-            userLabel.setText("Enter you name: ");
+            userLabel.setText("Enter your name: ");
             //degreeLabel.setText("Choose your degree: ");
             userText = new JTextField();
 
@@ -313,11 +313,28 @@ class classScreen extends JFrame implements ActionListener //going to implement 
         }
 }
 
+    class NewUserOrNo
+    {
+        NewUserOrNo()
+        {
+            int result  = JOptionPane.showConfirmDialog(null, "Are you a new user?");
+            //boolean answer = false;
+            if(result == JOptionPane.YES_OPTION)
+            {
+                loginScreen login=new loginScreen(true);
+            }
+            else
+            {
+                loginScreen login=new loginScreen(false);
+            }
+        }
+    }
+
 
     public class projectMain {
         public static void main(String[] args)
         {
             //creating login GUI
-            loginScreen login=new loginScreen();
+            NewUserOrNo n1 = new NewUserOrNo();
         }
 }
