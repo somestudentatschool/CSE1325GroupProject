@@ -249,19 +249,20 @@ class classScreen extends JFrame implements ActionListener //going to implement 
         }
     }
     //Added the login screen with GUI implementation
-    class loginScreen extends JFrame implements ActionListener
+    class loginScreen1 extends JFrame implements ActionListener
     {
         JPanel panel;
         JLabel userLabel, message;
         JLabel degreeLabel = new JLabel("Choose your degree: ");
-        JTextField userText;
+        JLabel passwordLabel = new JLabel("Enter your password: ");
+        JTextField userText, passwordText;
         String[] degrees = {"Computer Science", "Biomedical", "Mechanical"};
         JComboBox<String> comboDegree = new JComboBox<>(degrees);
         //JPasswordField passwordText;
         JButton submit;
         String userName,item;
 
-        loginScreen(boolean newUser)
+        loginScreen1()
         {
             //username labels
             userLabel = new JLabel();
@@ -271,13 +272,14 @@ class classScreen extends JFrame implements ActionListener //going to implement 
 
             //Submit button
             submit = new JButton("SUBMIT");
-            panel = new JPanel(new GridLayout(3, 2));
+            panel = new JPanel(new GridLayout(4, 2));
             panel.add(userLabel);
             panel.add(userText);
+            panel.add(passwordLabel);
+            panel.add(passwordText);
             panel.add(degreeLabel);
             panel.add(comboDegree);
             //panel.add(passwordLabel);
-            //panel.add(passwordText);
             message = new JLabel();
             panel.add(message);
             panel.add(submit);
@@ -288,7 +290,7 @@ class classScreen extends JFrame implements ActionListener //going to implement 
             add(panel,BorderLayout.CENTER);
             setTitle("Please enter your login credentials!");
             setSize(450,350);
-            setVisible(true);
+            panel.setVisible(true);
         }
 
 
@@ -299,7 +301,7 @@ class classScreen extends JFrame implements ActionListener //going to implement 
             System.out.println(userText.getText());
             item = (String)comboDegree.getSelectedItem();
             System.out.println(item);
-            setVisible(false);
+            panel.setVisible(false);
             menuinterface menu = new menuinterface(userName, item);
         }
         public String getUserName()
@@ -312,6 +314,71 @@ class classScreen extends JFrame implements ActionListener //going to implement 
             return item;
         }
 }
+class loginScreen2 extends JFrame implements ActionListener
+{
+    JPanel panel;
+    JLabel userLabel, message;
+    JLabel passwordLabel = new JLabel("Enter your password: ");
+    JTextField userText1, passwordText;
+    //String[] degrees = {"Computer Science", "Biomedical", "Mechanical"};
+    //JComboBox<String> comboDegree = new JComboBox<>(degrees);
+    //JPasswordField passwordText;
+    JButton submit;
+    String userName,item, password;
+
+    loginScreen2()
+    {
+        //username labels
+        userLabel = new JLabel();
+        userLabel.setText("Enter your name: ");
+        //degreeLabel.setText("Choose your degree: ");
+        userText1 = new JTextField();
+
+        //Submit button
+        submit = new JButton("SUBMIT");
+        panel = new JPanel(new GridLayout(3, 2));
+        panel.add(userLabel);
+        panel.add(userText1);
+       // panel.add(degreeLabel);
+        //panel.add(comboDegree);
+        panel.add(passwordLabel);
+        panel.add(passwordText);
+        message = new JLabel();
+        //panel.add(message);
+        panel.add(submit);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        //adding listeners
+        submit.addActionListener(this);
+        add(panel,BorderLayout.CENTER);
+        setTitle("Please enter your login credentials!");
+        setSize(450,350);
+        setVisible(true);
+    }
+
+
+    @Override
+    public void actionPerformed(ActionEvent e)
+    {
+        userName = userText1.getText();
+        password = passwordText.getText();
+        System.out.println(userText1.getText());
+        System.out.println(passwordText.getText());
+        //item = (String)comboDegree.getSelectedItem();
+        System.out.println(item);
+        setVisible(false);
+        menuinterface menu = new menuinterface(userName, item);
+    }
+    public String getUserName()
+    {
+        return userName;
+    }
+
+    public String getDegree()
+    {
+        return item;
+    }
+}
 
     class NewUserOrNo
     {
@@ -321,11 +388,11 @@ class classScreen extends JFrame implements ActionListener //going to implement 
             //boolean answer = false;
             if(result == JOptionPane.YES_OPTION)
             {
-                loginScreen login=new loginScreen(true);
+                loginScreen1 login=new loginScreen1();
             }
             else
             {
-                loginScreen login=new loginScreen(false);
+                loginScreen2 login=new loginScreen2();
             }
         }
     }
