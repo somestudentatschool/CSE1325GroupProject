@@ -98,13 +98,13 @@ class classScreen extends JFrame implements ActionListener //going to implement 
         classFrame.add(class9);
         classFrame.add(class10);
         classFrame.add(exit);
-       // classpanel.add(degreeLabel);
+        // classpanel.add(degreeLabel);
         //message = new JLabel();
         //classpanel.add(message);
         //setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         //adding listeners
         //add(classpanel,BorderLayout.CENTER);
-       // setTitle("Classes Available ");
+        // setTitle("Classes Available ");
         //setSize(450,350);
         classFrame.setVisible(true);
 
@@ -162,190 +162,124 @@ class classScreen extends JFrame implements ActionListener //going to implement 
 
 
 //OMAIR'S Additon GUI
-    class menuinterface extends JFrame implements ActionListener
+class menuinterface extends JFrame implements ActionListener
+{
+    People user;
+    DegreePlan degreeplan;
+    Degree degree1;
+    String degree;
+    String userName;
+    JFrame cool = new JFrame("Welcome");
+    JButton homebutton = new JButton("HOME");
+    JButton classbutton = new JButton("Classes");
+    JButton gpacalbutton = new JButton("MY GPA");
+
+    menuinterface(String userName, String degree)
     {
-        People user;
-        DegreePlan degreeplan;
-        Degree degree1;
-        String degree;
-        String userName;
-        JFrame cool = new JFrame("Welcome");
-        JButton homebutton = new JButton("HOME");
-        JButton classbutton = new JButton("Classes");
-        JButton gpacalbutton = new JButton("MY GPA");
-
-        menuinterface(String userName, String degree)
+        this.userName=userName;
+        user = new People(userName, degree);
+        this.degree = degree;
+        if(degree.equals("Computer Science"))
         {
-            this.userName=userName;
-            user = new People(userName, degree);
-            this.degree = degree;
-            if(degree.equals("Computer Science"))
-            {
-                System.out.println("Degree is comp Sci");
-                degree1 = Degree.CSE;
-                degreeplan = new DegreePlan(degree1);
-            }
-            else if(degree.equals("Biomedical"))
-            {
-                System.out.println("Degree is bio");
-                degree1 = Degree.BIOMED;
-                degreeplan = new DegreePlan(degree1);
-            }
-            else
-            {
-                System.out.println("Degree is mechanical");
-                degree1 = Degree.MECHANICAL;
-                degreeplan = new DegreePlan(degree1);
-            }
-            cool.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-            cool.setSize(1270,720);
-            cool.setVisible(true);
-            cool.setLayout(new GridLayout(2,3));
-            JLabel lite = new JLabel();
-            lite.setText(lite.getText()+"        Welcome "+userName);
-            lite.setFont(new Font("Verdana",Font.PLAIN,25));
-            lite.setBorder(new LineBorder(Color.BLUE,20));
-            cool.add(lite);
-            JPanel homebox = new JPanel(new GridLayout(1, 3));
-            JPanel classbox = new JPanel(new GridLayout(1, 3));
-            JPanel gpacal = new JPanel(new GridLayout(1, 3));
-            homebutton.setFont(new Font("Verdana",Font.BOLD,25));
-            homebutton.setBackground(Color.orange);
-            homebutton.setBorder(new LineBorder(Color.DARK_GRAY,20));
-            homebox.add(homebutton);
-            cool.add(homebox);
-            classbutton.setBackground(Color.orange);
-            classbutton.setFont(new Font("Verdana",Font.BOLD,25));
-            classbutton.setBorder(new LineBorder(Color.DARK_GRAY,20));
-            classbox.add(classbutton);
-            cool.add(classbox);
-            gpacalbutton.setFont(new Font("Verdana",Font.BOLD,25));
-            gpacalbutton.setBorder(new LineBorder(Color.DARK_GRAY,20));
-            gpacalbutton.setBackground(Color.orange);
-            gpacal.add(gpacalbutton);
-            cool.add(gpacal);
-            classbutton.addActionListener(this);
-            gpacalbutton.addActionListener(this);
-            homebutton.addActionListener(this);
+            System.out.println("Degree is comp Sci");
+            degree1 = Degree.CSE;
+            degreeplan = new DegreePlan(degree1);
         }
-
-
-        @Override
-        public void actionPerformed(ActionEvent e)
+        else if(degree.equals("Biomedical"))
         {
-            if(e.getSource() == classbutton)
-            {
-                classScreen classes = new classScreen(degreeplan, user);
+            System.out.println("Degree is bio");
+            degree1 = Degree.BIOMED;
+            degreeplan = new DegreePlan(degree1);
+        }
+        else
+        {
+            System.out.println("Degree is mechanical");
+            degree1 = Degree.MECHANICAL;
+            degreeplan = new DegreePlan(degree1);
+        }
+        cool.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        cool.setSize(1270,720);
+        cool.setVisible(true);
+        cool.setLayout(new GridLayout(2,3));
+        JLabel lite = new JLabel();
+        lite.setText(lite.getText()+"        Welcome "+userName);
+        lite.setFont(new Font("Verdana",Font.PLAIN,25));
+        lite.setBorder(new LineBorder(Color.BLUE,20));
+        cool.add(lite);
+        JPanel homebox = new JPanel(new GridLayout(1, 3));
+        JPanel classbox = new JPanel(new GridLayout(1, 3));
+        JPanel gpacal = new JPanel(new GridLayout(1, 3));
+        homebutton.setFont(new Font("Verdana",Font.BOLD,25));
+        homebutton.setBackground(Color.orange);
+        homebutton.setBorder(new LineBorder(Color.DARK_GRAY,20));
+        homebox.add(homebutton);
+        cool.add(homebox);
+        classbutton.setBackground(Color.orange);
+        classbutton.setFont(new Font("Verdana",Font.BOLD,25));
+        classbutton.setBorder(new LineBorder(Color.DARK_GRAY,20));
+        classbox.add(classbutton);
+        cool.add(classbox);
+        gpacalbutton.setFont(new Font("Verdana",Font.BOLD,25));
+        gpacalbutton.setBorder(new LineBorder(Color.DARK_GRAY,20));
+        gpacalbutton.setBackground(Color.orange);
+        gpacal.add(gpacalbutton);
+        cool.add(gpacal);
+        classbutton.addActionListener(this);
+        gpacalbutton.addActionListener(this);
+        homebutton.addActionListener(this);
+    }
 
-            }
-            else if(e.getSource()==gpacalbutton)
-            {
-                new GPA();
-            }
-            else if(e.getSource()==homebutton)
-            {
-                new menuinterface(userName,degree);
-            }
+
+    @Override
+    public void actionPerformed(ActionEvent e)
+    {
+        if(e.getSource() == classbutton)
+        {
+            classScreen classes = new classScreen(degreeplan, user);
+
+        }
+        else if(e.getSource()==gpacalbutton)
+        {
+            new GPA();
+        }
+        else if(e.getSource()==homebutton)
+        {
+            new menuinterface(userName,degree);
         }
     }
-    //Added the login screen with GUI implementation
-    class loginScreen1 extends JFrame implements ActionListener
-    {
-        JPanel panel;
-        JLabel userLabel, message;
-        JLabel degreeLabel = new JLabel("Choose your degree: ");
-        JLabel passwordLabel = new JLabel("Enter your password: ");
-        JTextField userText, passwordText;
-        String[] degrees = {"Computer Science", "Biomedical", "Mechanical"};
-        JComboBox<String> comboDegree = new JComboBox<>(degrees);
-        //JPasswordField passwordText;
-        JButton submit;
-        String userName,item;
-
-        loginScreen1()
-        {
-            //username labels
-            userLabel = new JLabel();
-            userLabel.setText("Enter your name: ");
-            //degreeLabel.setText("Choose your degree: ");
-            userText = new JTextField();
-
-            //Submit button
-            submit = new JButton("SUBMIT");
-            panel = new JPanel(new GridLayout(4, 2));
-            panel.add(userLabel);
-            panel.add(userText);
-            panel.add(passwordLabel);
-            panel.add(passwordText);
-            panel.add(degreeLabel);
-            panel.add(comboDegree);
-            //panel.add(passwordLabel);
-            message = new JLabel();
-            panel.add(message);
-            panel.add(submit);
-            setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
-            //adding listeners
-            submit.addActionListener(this);
-            add(panel,BorderLayout.CENTER);
-            setTitle("Please enter your login credentials!");
-            setSize(450,350);
-            panel.setVisible(true);
-        }
-
-
-        @Override
-        public void actionPerformed(ActionEvent e)
-        {
-            userName = userText.getText();
-            System.out.println(userText.getText());
-            item = (String)comboDegree.getSelectedItem();
-            System.out.println(item);
-            panel.setVisible(false);
-            menuinterface menu = new menuinterface(userName, item);
-        }
-        public String getUserName()
-        {
-            return userName;
-        }
-
-        public String getDegree()
-        {
-            return item;
-        }
 }
-
-class loginScreen2 extends JFrame implements ActionListener
+//Added the login screen with GUI implementation
+class loginScreen extends JFrame implements ActionListener
 {
     JPanel panel;
     JLabel userLabel, message;
-    JLabel passwordLabel = new JLabel("Enter your password: ");
-    JTextField userText1, passwordText;
-    //String[] degrees = {"Computer Science", "Biomedical", "Mechanical"};
-    //JComboBox<String> comboDegree = new JComboBox<>(degrees);
+    JLabel degreeLabel = new JLabel("Choose you degree: ");
+    JTextField userText;
+    String[] degrees = {"Computer Science", "Biomedical", "Mechanical"};
+    JComboBox<String> comboDegree = new JComboBox<>(degrees);
     //JPasswordField passwordText;
     JButton submit;
-    String userName,item, password;
+    String userName,item;
 
-    loginScreen2()
+    loginScreen()
     {
         //username labels
         userLabel = new JLabel();
-        userLabel.setText("Enter your name: ");
+        userLabel.setText("Enter you name: ");
         //degreeLabel.setText("Choose your degree: ");
-        userText1 = new JTextField();
+        userText = new JTextField();
 
         //Submit button
         submit = new JButton("SUBMIT");
         panel = new JPanel(new GridLayout(3, 2));
         panel.add(userLabel);
-        panel.add(userText1);
-       // panel.add(degreeLabel);
-        //panel.add(comboDegree);
-        panel.add(passwordLabel);
-        panel.add(passwordText);
+        panel.add(userText);
+        panel.add(degreeLabel);
+        panel.add(comboDegree);
+        //panel.add(passwordLabel);
+        //panel.add(passwordText);
         message = new JLabel();
-        //panel.add(message);
+        panel.add(message);
         panel.add(submit);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
@@ -361,11 +295,9 @@ class loginScreen2 extends JFrame implements ActionListener
     @Override
     public void actionPerformed(ActionEvent e)
     {
-        userName = userText1.getText();
-        password = passwordText.getText();
-        System.out.println(userText1.getText());
-        System.out.println(passwordText.getText());
-        //item = (String)comboDegree.getSelectedItem();
+        userName = userText.getText();
+        System.out.println(userText.getText());
+        item = (String)comboDegree.getSelectedItem();
         System.out.println(item);
         setVisible(false);
         menuinterface menu = new menuinterface(userName, item);
@@ -381,28 +313,11 @@ class loginScreen2 extends JFrame implements ActionListener
     }
 }
 
-    class NewUserOrNo
+
+public class projectMain {
+    public static void main(String[] args)
     {
-        NewUserOrNo()
-        {
-            int result  = JOptionPane.showConfirmDialog(null, "Are you a new user?");
-            //boolean answer = false;
-            if(result == JOptionPane.YES_OPTION)
-            {
-                loginScreen1 login=new loginScreen1();
-            }
-            else
-            {
-                loginScreen2 login=new loginScreen2();
-            }
-        }
+        //creating login GUI
+        loginScreen login=new loginScreen();
     }
-
-
-    public class projectMain {
-        public static void main(String[] args)
-        {
-            //creating login GUI
-            NewUserOrNo n1 = new NewUserOrNo();
-        }
 }
